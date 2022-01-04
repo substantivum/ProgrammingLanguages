@@ -1,0 +1,139 @@
+HashSet<String> countryHashSet = new HashSet<>();
+        countryHashSet.add("Россия");
+        countryHashSet.add("Россия");
+        countryHashSet.add("Франция");
+        countryHashSet.add("Франция");
+        countryHashSet.add("Гондурас");
+        countryHashSet.add("Кот-Д'Ивуар");
+        countryHashSet.add("Кот-Д'Ивуар");
+        for (String i:
+             countryHashSet) {
+            System.out.println(i);
+        }
+
+        //////////////////////////
+
+        HashMap<String,String> Fruits = new HashMap<>();
+        Fruits.put("Арбуз","Ягода");
+        Fruits.put("Банан","Трава");
+        Fruits.put("Вишня","Ягода");
+        Fruits.put("Груша","Фрукт");
+        Fruits.put("Дыня","Овощ");
+        Fruits.put("Ежевика","Куст");
+        Fruits.put("Жень-Шень","Корень");
+        Fruits.put("Земляника","Ягода");
+        Fruits.put("Ирис","Цветок");
+        Fruits.put("Картофель","Клубень");
+
+        for(Map.Entry<String,String> entry : Fruits.entrySet())
+        {   String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key +" - "+ value);  }
+
+    /////////////////////////////////
+
+        HashMap<String, Cat> cats = new HashMap<>();
+        Cat cat = new Cat();
+        cats.put("S",cat);
+        cats.put("F",cat);
+        cats.put("Q",cat);
+        cats.put("T",cat);
+        cats.put("B",cat);
+        cats.put("P",cat);
+        cats.put("L",cat);
+        cats.put("Z",cat);
+
+        for(Map.Entry<String,Cat> entry : cats.entrySet())
+        {   String key = entry.getKey();
+            Cat value = entry.getValue();
+            System.out.println(key +" - "+ value.getName());  }
+
+
+        HashSet<String> L = new HashSet<>();
+        L.add("Любовь");
+        L.add("Лень");
+        L.add("Липолитик");
+        L.add("Ленивец");
+        L.add("Лапа");
+        L.add("Лютик");
+        L.add("Лань");
+        L.add("Лира");
+        L.add("Ливень");
+        L.add("Лама");
+        L.add("Луна");
+        L.add("Лишение");
+        L.add("Локатор");
+        L.add("Лесть");
+        L.add("Ламия");
+        L.add("Либерал");
+        L.add("Ломота");
+
+        Set<Integer> numbers = new HashSet<>();
+        //adding 20 numbers
+        for(int i = 1; i<21; i++){
+            numbers.add(i);
+        }
+
+        System.out.println("created num set:");
+
+        for(int i : numbers){
+            System.out.println(i);
+        }
+        Set<Integer> num2 = new HashSet<>();
+
+        Iterator<Integer> iterator = numbers.iterator();
+        while(iterator.hasNext()){
+            int n = iterator.next();
+            if(n < 10){
+                num2.add(n);
+            }
+        }
+
+        numbers = num2;
+
+        System.out.println("num set after removing nums that are lower than 10:");
+
+        for(int i : numbers){
+            System.out.println(i);
+        }
+
+        //6
+
+        Map<String, Date> people = new HashMap<String, Date>();
+        Map<String, Date> copy = new HashMap<String, Date>();
+        DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        Date bos = format.parse("01-06-2020");
+        Date eos = format.parse("31-08-2020");
+
+        people.put("Billigen" , format.parse("01-01-2020"));
+        people.put("Jackson" , format.parse("01-02-2020"));
+        people.put("Tomson" , format.parse("01-03-2020"));
+        people.put("black" , format.parse("01-06-2020"));
+        people.put("Famos" , format.parse("01-07-2020"));
+        people.put("Token" , format.parse("01-08-2020"));
+
+        System.out.println("map before deleting:");
+        for(String key : people.keySet()){
+            System.out.printf("vorname : %s, date of birth: %s%n", key, format.format(people.get(key)));
+        }
+
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+        Calendar cal3 = Calendar.getInstance();
+        cal1.setTime(bos);
+        cal2.setTime(eos);
+	 cal3.setTime(people.get(key));
+            if(cal3.get(Calendar.MONTH) < cal1.get(Calendar.MONTH) && cal3.get(Calendar.MONTH) < cal2.get(Calendar.MONTH) ){
+                copy.put(key, people.get(key));
+            }
+        }
+        people.clear();
+        for(String key : copy.keySet()){
+            people.put(key, copy.get(key));
+        }
+        System.out.println(people.size());
+
+        System.out.println("map after deleting:");
+        for(String key : people.keySet()){
+            System.out.printf("vorname : %s, date of birth: %s%n", key, format.format(people.get(key)));
+        }

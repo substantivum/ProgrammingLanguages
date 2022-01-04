@@ -1,0 +1,38 @@
+for (int i = List.size()-1; i>=0;i--){
+            System.out.println(List.get(i));
+        }
+
+        System.out.print("Enter position: ");
+        int c = in.nextInt();
+        List.add(c,str5);
+
+        List.addFirst(str1);
+        List.addLast(str2);
+
+        String[] ListArray =  List.toArray(new String[4]);
+        for (String i:
+             ListArray) {
+            System.out.println(i);
+        }
+        //////////////////
+        Animal s1 = new Animal("Kaika","Alabai",12);
+        Animal s2 = new Animal("Mushtar","Ovcharka",5);
+        Animal s3 = new Animal("Rust","hotdog",7);
+        Animal s4 = new Animal("Jakk","Labrador",6);
+
+        LinkedList<Animal> Dogs = new LinkedList<Animal>();
+        Dogs.add(s1);
+        Dogs.add(s2);
+        Dogs.add(s3);
+        Dogs.add(s4);
+        Deque<Animal> deque = new ArrayDeque<Animal>(Dogs);
+        deque.addFirst(s1);
+        deque.addLast(s4);
+        deque.peekFirst();
+        deque.peekLast();
+        deque.push(s2);
+        deque.removeFirst();
+        int v = 0;
+        while(deque.peek()!=null){
+            deque.pollFirst().display();
+        }
